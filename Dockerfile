@@ -27,6 +27,10 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | bash
 # and install node
 RUN apt-get install -y nodejs
 
+#RUN jenkins start
+CMD service jenkins start
+CMD service jenkins status
+
 USER $USER
 
 CMD tail -f /dev/null
