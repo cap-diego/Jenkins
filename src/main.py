@@ -5,9 +5,9 @@ class TestStringMethods(unittest.TestCase):
 
     def test_isupper_always_true(self):
         self.assertTrue('HOLA'.isupper())
-
-    def test_isupper_always_false(self):
-        self.assertTrue('hola'.isupper())
+    #
+    # def test_isupper_always_false(self):
+    #     self.assertTrue('hola'.isupper())
 
 if __name__ == '__main__':
 
