@@ -2,19 +2,19 @@ import unittest
 
 class TestStringMethods(unittest.TestCase):
 
-    def test_upper(self, str):
-        self.assertEqual(str.upper(), str)
-        
-def test_always_fails():
-    TestStringMethods().test_upper('asd')
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
 
-def test_always_success():
-    TestStringMethods().test_upper('HOLA')
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):
+            s.split(2)
 
 if __name__ == '__main__':
-    #unittest.TestCase().assertEqual(1, 2)
-    test_always_success()
-    try:
-        test_always_fails()
-    except:
-        print("Test falló")
+    unittest.main()
