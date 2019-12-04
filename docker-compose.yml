@@ -1,0 +1,15 @@
+version: "3"
+services:
+  ec_jenkins:
+    build: .
+    volumes:
+      - src/:/srv/app/
+      - $SSH_AUTH_SOCK:/ssh-agent #Forward local machine (Host) key to docker container.
+      - jenkins_data/:/var/lib/jenkins/
+    environment:
+      SSH_AUTH_SOCK: /ssh-agent
+    ports:
+      - "8080:8080"
+
+volumes:
+  src:
