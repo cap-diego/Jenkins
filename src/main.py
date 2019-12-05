@@ -14,9 +14,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('job_id')
     args = parser.parse_args()
-
     print("Running case with job ID: {}".format(args.job_id))
-    
     suite = unittest.TestLoader().loadTestsFromTestCase(TestStringMethods)
     unittest.TextTestRunner(verbosity=2).run(suite)
 
